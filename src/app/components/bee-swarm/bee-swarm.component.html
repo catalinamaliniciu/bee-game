@@ -2,7 +2,7 @@
     <div class="bee-list">
         @for (bee of getBeesByType(beeType.value); track bee.id) {
             <div class="hex-card-wrapper">
-                <mat-card [class.game-over]="isGameOver()" [@pulseAnimation]="lastHitBee()?.id === bee.id ? 'active' : 'inactive'">
+                <mat-card [class.game-over]="isGameOver()" [@pulseAnimation]="lastHitBee()?.id === bee.id || isGameOver() ? 'active' : 'inactive'">
                     <mat-card-header>
                         <img [ngSrc]="beeType.value === BeeType.Queen ? 'icons/queen-bee.png' : 'icons/honeybee.png'"
                              width="50" height="50" alt=""/>

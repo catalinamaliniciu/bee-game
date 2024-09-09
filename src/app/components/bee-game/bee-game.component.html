@@ -15,7 +15,9 @@
             <p class="username">Welcome, {{ gameState.username() }}!</p>
         </mat-card-title>
         <mat-card-content>
-            <p class="message">{{ message }}</p>
+            <div style="height: 25px;">
+                <span class="message">{{ message }}</span>
+            </div>
             <div class="actions">
                 <button class="hit-button"
                     mat-raised-button

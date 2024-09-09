@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { GameStateService } from '../../services/game-state.service';
 import { NgOptimizedImage } from '@angular/common';
 import { BeeSwarmComponent } from '../bee-swarm/bee-swarm.component';
@@ -37,7 +37,7 @@ import { Bee } from '../../models/bee.model';
         ])
     ]
 })
-export class BeeGameComponent {
+export class BeeGameComponent implements OnInit {
     message: string = '';
     playerName: string = '';
     buttonState: string = 'normal';
@@ -45,6 +45,10 @@ export class BeeGameComponent {
     constructor(
         public gameState: GameStateService,
         private _dialog: MatDialog) {}
+
+    ngOnInit(): void {
+        this._updateMessage();
+    }
 
     onHit(): void {
         this.gameState.hitRandomBee();

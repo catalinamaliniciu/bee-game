@@ -45,7 +45,7 @@ describe('BeeSwarmComponent', () => {
         expect(beeElements[2].nativeElement.textContent).toContain('50');
     });
 
-    it('should use trackById for *ngFor', () => {
+    it('should use trackById', () => {
         const trackByFn = component.trackById(0, component.bees()[0]);
         expect(trackByFn).toBe(1);
     });
