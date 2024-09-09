@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { GameStateService } from '../../services/game-state.service';
-import { NgIf, NgOptimizedImage } from '@angular/common';
+import { NgOptimizedImage } from '@angular/common';
 import { BeeSwarmComponent } from '../bee-swarm/bee-swarm.component';
 import { FormsModule } from '@angular/forms';
 import { MatCard, MatCardContent, MatCardTitle } from '@angular/material/card';
