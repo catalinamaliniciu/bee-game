@@ -1,0 +1,70 @@
+:host {
+    width: 80%;
+    background-color: #f69044;
+    overflow: scroll;
+    .username {
+        font-size: 26px;
+        margin-bottom: 0;
+        color: #333
+    }
+
+    .message {
+        font-size: 16px;
+    }
+
+    mat-card {
+        width: 60vw;
+        margin: auto;
+        height: 20vh;
+        box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
+        border-radius: 5px;
+        backdrop-filter: blur(14px);
+        background-color: rgba(255, 255, 255, 0.2);
+        padding: 20px;
+
+        mat-card-title {
+            display: flex;
+            align-items: end;
+            margin-bottom: 30px;
+        }
+    }
+
+    mat-card-content {
+        text-align: center;
+
+        .actions {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+
+            .hit-button {
+                background-color: #fcfcfc;
+                color: black;
+                &:disabled {
+                    background-color: #c7c6c6;
+                }
+            }
+        }
+    }
+
+    .welcome-card  {
+        mat-card-title {
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        mat-card-content p {
+            font-size: 16px;
+        }
+    }
+}
+
+:host {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+:host::-webkit-scrollbar {
+    display: none;
+}
+

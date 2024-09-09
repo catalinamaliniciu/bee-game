@@ -1,0 +1,22 @@
+@for (beeType of BeeType | keyvalue: originalOrder; track beeType) {
+    <div class="bee-list">
+        @for (bee of getBeesByType(beeType.value); track bee.id) {
+            <div class="hex-card-wrapper">
+                <mat-card [class.game-over]="isGameOver()" [@pulseAnimation]="lastHitBee()?.id === bee.id ? 'active' : 'inactive'">
+                    <mat-card-header>
+                        <img [ngSrc]="beeType.value === BeeType.Queen ? 'icons/queen-bee.png' : 'icons/honeybee.png'"
+                             width="50" height="50" alt=""/>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <h3 [ngClass]="bee.id === lastHitBee()?.id ? 'hit' : (bee.isDead() ? 'dead' : 'alive')">{{ bee.type }}</h3>
+                        <p>Health: {{ bee.health }}</p>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        }
+    </div>
+}
+
+
+
+

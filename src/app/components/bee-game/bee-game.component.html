@@ -1,0 +1,48 @@
+@if (!gameState.username()) {
+    <mat-card class="welcome-card">
+        <mat-card-title>Welcome to The Bee Game!</mat-card-title>
+        <mat-card-content>
+            <p>Click start to enter your name and begin the game.</p>
+            <button mat-raised-button color="default" (click)="openNameDialog()">
+                Start Game
+            </button>
+        </mat-card-content>
+    </mat-card>
+} @else {
+    <mat-card>
+        <mat-card-title>
+            <img ngSrc="icons/beekeeper.png" width="50" height="50" alt="Beekeeper"/>
+            <p class="username">Welcome, {{ gameState.username() }}!</p>
+        </mat-card-title>
+        <mat-card-content>
+            <p class="message">{{ message }}</p>
+            <div class="actions">
+                <button class="hit-button"
+                    mat-raised-button
+                    (click)="onHit()"
+                    [disabled]="gameState.isGameOver()"
+                    [@buttonPress]="buttonState"
+                    (mousedown)="buttonState = 'pressed'"
+                    (mouseup)="buttonState = 'normal'"
+                    (mouseleave)="buttonState = 'normal'"
+                >
+                    Hit a Bee
+                </button>
+                <button
+                    mat-raised-button
+                    color="warn"
+                    (click)="openNameDialog(true)"
+                    [@buttonPress]="buttonState"
+                    (mousedown)="buttonState = 'pressed'"
+                    (mouseup)="buttonState = 'normal'"
+                    (mouseleave)="buttonState = 'normal'"
+                >
+                    Restart Game
+                </button>
+            </div>
+
+        </mat-card-content>
+    </mat-card>
+
+    <app-bee-swarm [bees]="gameState.swarm()" [lastHitBee]="gameState.lastHitBee()" [isGameOver]="gameState.isGameOver()"></app-bee-swarm>
+}

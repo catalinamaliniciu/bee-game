@@ -1,0 +1,40 @@
+.bee-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+    mat-card {
+        width: 140px;
+        height: 160px;
+        text-align: center;
+        position: relative;
+        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        margin: auto;
+
+        h3 {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .dead {
+            color: #b70d0d;
+        }
+
+        .alive {
+            color: #11ad36;
+        }
+
+        .hit {
+            color: #d7b40a;
+        }
+
+    }
+    .game-over {
+        background-color: #c7c6c6
+    }
+}
